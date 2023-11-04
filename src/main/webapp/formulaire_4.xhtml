@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="jakarta.faces.core"> <!-- Assurez-vous que la déclaration de l'espace de noms soit correcte -->
+
+    <!-- Section de métadonnées pour extraire le paramètre "nb" de l'URL et l'assigner à "bean4.nombre" -->
+    <f:metadata>
+        <f:viewParam name="nb" value="#{bean4.nombre}"/>
+    </f:metadata>
+    <h:head>
+        <title>Application&gt;formulaire_4</title>
+    </h:head>
+    <h:body>
+        <h1>Applicationformulaire_4</h1>
+        <h:form>
+            <!-- Étiquette de sortie pour le champ de saisie -->
+            <h:outputLabel value="Entrez un nombre" for="nombre"/>
+            <!-- Champ de saisie lié à la propriété "nombre" du bean "bean4" -->
+            <h:inputText id="nombre" value="#{bean4.nombre}"/>
+            <!-- Bouton pour soumettre le formulaire et déclencher l'action "afficher" -->
+            <h:commandButton value="Valider" action="#{bean4.afficher()}"/>
+        </h:form>
+
+    </h:body>
+</html>
