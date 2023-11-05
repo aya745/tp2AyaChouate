@@ -2,13 +2,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="jakarta.faces.html">
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
 
     <body>
 
         <ui:composition template="./WEB-INF/templates/template_defaut.xhtml">
-
             <ui:param name="titre" value="Exercice 4"/> <!-- Donne une valeur du parametre -->
+            <ui:define name="metadata">
+                <!-- Section de métadonnées pour extraire le paramètre "nb" de l'URL et l'assigner à "bean2.nombre" -->
+                <f:metadata>
+                    <f:viewParam name="nb" value="#{bean4.nombre}"/>
+                </f:metadata>
+            </ui:define>
+
+           
 
             <ui:define name="content">
                 <h1>Applicationformulaire__4</h1>
@@ -16,11 +24,12 @@
                     <!-- Étiquette de sortie pour le champ de saisie -->
                     <h:outputLabel value="Entrez un nombre" for="nombre"/>
                     <!-- Champ de saisie lié à la propriété "nombre" du bean "bean4" -->
-                    <h:inputText id="nombre" value="#{bean__4.nombre}"/>
+                    <h:inputText id="nombre" value="#{bean4.nombre}"/>
                     <!-- Bouton pour soumettre le formulaire et déclencher l'action "afficher" -->
-                    <h:commandButton value="Valider" action="#{bean__4.afficher()}"/>
+                    <h:commandButton value="Valider" action="#{bean4.afficher()}"/>
                 </h:form>
             </ui:define>
+
 
         </ui:composition>
 
